@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>קורס חיבור לטבע</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+	<meta name="description" content="קורס וסדנאות רוקחות טבעית עם שלומית כהן - למדו להכין בשמים טבעיים, סבונים ומוצרי ספא מחומרי גלם טבעיים.">
+<meta name="keywords" content="רוקחות טבעית, קורסים, סדנאות, צמחי מרפא, סבון טבעי, בושם טבעי">
+<meta name="author" content="שלומית כהן">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="קורס רוקחות טבעית - מתנת האדמה">
+<meta property="og:description" content="למדו כיצד לרקוח מוצרים טבעיים בבית! קורס וסדנאות עם שלומית כהן.">
+<meta property="og:image" content="https://matnadadama.netlify.app/course.jpg">
+<meta property="og:url" content="https://matnadadama.netlify.app/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="קורס רוקחות טבעית - מתנת האדמה">
+<meta name="twitter:description" content="למדו כיצד לרקוח מוצרים טבעיים בבית! קורס וסדנאות עם שלומית כהן.">
+<meta name="twitter:image" content="https://matnadadama.netlify.app/images/course.jpg">
+
+
+    <style>
+body {
+     font-family: 'Lora', serif; 
+    font-weight: bold;
+    background-color: #fdf9f3;
+    color: #4a4a4a;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    min-width: 100vw;
+    
+    background-image: url('images/branch.jpg'), url('images/branch.jpg');
+    background-position: -60% center, 160% center;
+    background-repeat: no-repeat;
+    background-size: auto 100vh;
+    background-attachment: fixed;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    overflow: hidden;
+    background-color: rgba(253, 249, 243, 0.9);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+video, img, iframe {
+    max-width: 100%;
+    display: block;
+    margin: 20px auto;
+}
+a {
+  color: #0288d1; /* כחול בהיר */
+  text-decoration: none; /* מסיר קו תחתון בקישורים */
+}
+
+a:hover {
+  text-decoration: underline; /* קו תחתון בעת ריחוף מעל קישור */
+}
+
+h1, h2 {
+    word-wrap: break-word;
+    text-align: center;
+}
+h1, h2, h3 {
+    font-family: 'Poppins', sans-serif; /* גופן לכותרות */
+	color: #1a237e; /* כחול כהה */
+	font-weight: bold;
+}
+h1,h2 {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* כשהוא נטען */
+h1.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+p {
+    font-size: 20px; /* הגדלת טקסט כללי */
+    font-family: 'Lora', serif;
+    font-weight: 400;
+    color: #4f4f4f;
+    text-decoration: underline; /* קו תחתון עדין */
+    opacity: 0;
+    transform: translateX(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+p.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+p:last-of-type, p:nth-last-of-type(2) {
+    font-size: 24px; /* הגדלה נוספת לשתי הפסקאות האחרונות */
+    font-weight: bold;
+    color: #d32f2f; /* צבע אדום כהה להדגשה */
+}
+
+/* עיצוב רשימה עם אייקון V */
+ul.checklist {
+    list-style: none;
+    padding: 0;
+    text-align: right;
+}
+
+ul.checklist li {
+    position: relative;
+    padding-right: 30px;
+    font-size: 20px;
+    color: #4f4f4f;
+    opacity: 0;
+    transform: translateX(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    margin-bottom: 10px;
+}
+
+ul.checklist li::before {
+    content: '\f058'; /* FontAwesome check-circle */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    right: 0;
+    color: #6c935c; /* ירוק כהה */
+    font-size: 24px;
+}
+
+/* הנפשת הרשימה */
+ul.checklist li.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+ul.checklist li.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+h1.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+/* עיצוב פסקאות אחרונות */
+p.highlight {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1a237e; /* כחול כהה */
+    opacity: 0;
+    transform: translateX(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+p.highlight.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+button, .cta-button {
+  background-color: #f57c00; /* כתום */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover, .cta-button:hover {
+  background-color: #e65100; /* כתום כהה יותר בעת ריחוף */
+}
+
+.social-icons a {
+    margin: 0 10px;
+    color: #6c935c;
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #4a7042;
+}
+
+.circle-image {
+    width: 50%;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    text-align: right;
+}
+
+ul li {
+    position: relative;
+    padding-right: 30px;
+    font-size: 18px;
+    opacity: 0;
+    transform: translateY(20px);
+    margin-bottom: 15px;
+}
+
+ul li::before {
+    content: '\f06c';
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    right: 0;
+    color: #6c935c;
+    font-size: 20px;
+}
+
+/* כפתורי הסושיאל לינקס בפינה הימנית */
+.social-links-header {
+    position: fixed;
+    bottom: 60px; /* מציב את הסושיאל לינקס קצת מעל כפתור צור קשר */
+    right: 20px;
+    text-align: center;
+}
+
+.social-links-header a {
+    margin: 5px;
+    font-size: 18px;
+    color: #333; /* צבע טקסט רגיל, בלי רקע */
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.social-links-header a:hover {
+    background-color: #e0e0e0; /* צבע רקע בה-hover אם רוצים */
+}
+
+/* כפתור הניווט בפינה הימנית */
+.btn-footer-nav {
+    position: fixed;
+    bottom: 20px; /* הכפתור יהיה מתחת לסושיאל לינקס */
+    right: 20px;
+    background-color: #6c935c; /* רקע ירוק לכפתור */
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.btn-footer-nav:hover {
+    background-color: #587a46; /* צבע רקע כשהכפתור נלחץ */
+}
+
+
+
+.social-links-header .instagram {
+    color: #E4405F;
+}
+
+.social-links-header .facebook {
+    color: #1877F2;
+}
+
+.social-links-header .whatsapp {
+    color: #25D366;
+}
+
+@media (max-width: 767px) {
+    .social-links-header {
+        position: absolute;
+        top: 10px;
+        right: 30px;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .social-links-header a {
+        font-size: 20px;
+        display: block;
+    }
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        background-image: none;
+        background-color: #fdf9f3;
+    }
+}
+@keyframes slideInRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.slide-in-text {
+    opacity: 0;
+    transform: translateX(30px); /* יתחיל מימין */
+    transition: opacity 0.5s, transform 1.2s;
+}
+
+.slide-in-text.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+
+
+
+
+
+
+
+</style>
+</head>
+<body>
+    <div class="container">
+<div class="social-links-header">
+    <a href="https://wa.me/972545420711" target="_blank" class="whatsapp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+</div>
+<div>
+    <a href="#contact" class="btn-footer-nav">צרי קשר</a> 
+    <img class="circle-image" src="images/Logo.png" alt="לוגו מתנת האדמה" width="100%" height="100%"></img>
+    
+    <ul class="checklist">
+        <li>מתמודדים עם משבר או דיכאון?</li>
+        <li>חיים עם התמודדות נפשית מורכבת או הפרעת אישיות?</li>
+        <li>חווים חרדה יומיומית או התקפי חרדה?</li>
+        <li>עברתם טראומה בעבר או בהווה?</li>
+        <li>נמצאים בפוסט טראומה?</li>
+    </ul>
+    
+    <p class="highlight">אם עניתם בחיוב על לפחות אחת מהשאלות -</p>
+    <p class="highlight">אני כאן בשבילכם, ויש בידי את היכולת לסייע לכם</p>
+</div>
+
+<div>
+<h1>טיפולים רגשיים ונפשיים בהתאמה אישית</h1>
+<ul class="checklist">
+	<li>טיפול במצבי משבר, דיכאון, חרדות, טראומות בעבר ובהווה, פוסט טראומה, פגיעות מיניות, התעללות נרקיסיסטית, מחלות נפשיות, הפרעות אישיות ועוד.</li>
+	<li>שיטות טיפול – פסיכותרפיה דינמית, טיפול קוגניטיבי התנהגותי (cbt), EMDR ביופידבק</li>
+	
+	<h2>אסי גרינברג - מטפלת ופסיכוטרפית</h2>
+	<p> בעלת תואר 2 בפסיכוטרפיה, ובעלת הסמכות רבות בתחום הטיפולי, כמו CBT וEDMR</p>
+</ul>
+	<section>
+		<h3>השאירי פרטים, או צרי קשר ישירות דרך הוואטסאפ!</h3>
+		<div id="contact">
+			<iframe src="colorlib-regform-23/details.html" width="100%" height="700" style="border:none;"></iframe>
+		</div>
+    </section>
+    </div>
+</div>
+
+    
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const elements = document.querySelectorAll("ul.checklist li, p.highlight,h1");
+    elements.forEach((el, index) => {
+        setTimeout(() => {
+            el.classList.add("show");
+        }, index * 400);
+    });
+});
+
+
+</script>
+
+</body>
+</html>
