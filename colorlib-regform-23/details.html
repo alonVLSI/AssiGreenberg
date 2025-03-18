@@ -48,9 +48,35 @@ button[disabled] {
 }
 
 
+/* מצב ברירת מחדל למחשב */
 .whatsapp {
-    color: #25D366;
+    color: #ffffff; /* צבע האייקון הלבן */
+    padding: 10px; /* רווח פנימי כדי שהרקע יוקף את האייקון */
+    border-radius: 50%; /* עיגול של הרקע */
+    transition: background-color 0.3s ease; /* אפקט של שינוי צבע חלק */
 }
+
+.whatsapp:hover {
+    background-color: #25D366; /* רקע ירוק בהיר כשעוברים עם העכבר */
+    color: white; /* אפשר לשמור על הצבע הלבן של האייקון */
+}
+
+/* התאמת CSS למובייל */
+@media (max-width: 768px) {
+    .whatsapp {
+        background-color: #25D366; /* הוספת רקע ירוק כבר במובייל */
+        border-radius: 50%; /* עיגול של הרקע גם במובייל */
+        padding: 10px; /* רווח פנימי */
+    }
+
+    .whatsapp:hover {
+        background-color: #25D366; /* רקע ירוק גם במובייל */
+        color: white; /* הצבע הלבן של האייקון */
+    }
+}
+
+
+
 
 
 </style>
