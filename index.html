@@ -7,18 +7,13 @@
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Lora:wght@400;700&display=swap" rel="stylesheet">
-	<meta name="description" content="קורס וסדנאות רוקחות טבעית עם שלומית כהן - למדו להכין בשמים טבעיים, סבונים ומוצרי ספא מחומרי גלם טבעיים.">
-<meta name="keywords" content="רוקחות טבעית, קורסים, סדנאות, צמחי מרפא, סבון טבעי, בושם טבעי">
+	<meta name="description" content="אסי גרינברג - טיפול CB וEMDR, פסיכותרפיסטית">
+<meta name="keywords" content="אסי גרינברג, CBT,EMDR, פסיכוטרפיסטית, טיפול רגשי, פוסט טראומה, טיפול בדיכאון">
 <meta name="author" content="אסי גרינברג">
 <meta name="robots" content="index, follow">
-<meta property="og:title" content="קורס רוקחות טבעית - מתנת האדמה">
-<meta property="og:description" content="למדו כיצד לרקוח מוצרים טבעיים בבית! קורס וסדנאות עם שלומית כהן.">
-<meta property="og:image" content="https://matnadadama.netlify.app/course.jpg">
-<meta property="og:url" content="https://matnadadama.netlify.app/">
+<meta property="og:title" content="assi grinberg">
+<meta property="og:url" content="assicbt.netlify.app">
 <meta property="og:type" content="website">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="קורס רוקחות טבעית - מתנת האדמה">
-<meta name="twitter:description" content="למדו כיצד לרקוח מוצרים טבעיים בבית! קורס וסדנאות עם שלומית כהן.">
 
 
     <style>
@@ -44,7 +39,7 @@ body {
     margin: 0 auto;
     padding: 20px;
     overflow: hidden;
-    background-color: rgba(253, 249, 243, 0.9);
+	background-color: rgba(200, 230, 201, 0.9);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
 }
@@ -195,7 +190,8 @@ button:hover, .cta-button:hover {
     width: 50%;
     border-radius: 50%;
     display: block;
-    margin: 0 auto;
+	margin: 0 auto 20px; /* רווח של 20 פיקסלים מתחת ללוגו */
+
 }
 
 ul {
@@ -331,6 +327,44 @@ ul li::before {
 }
 
 
+.wave-section {
+    position: relative;
+    background-color: #d4e6f1;
+    text-align: center;
+    padding: 50px 20px;
+    overflow: hidden; /* חיתוך הגל */
+	    border-radius: 20px; /* עיגול הפינות */
+	
+}
+
+.wave-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden; /* מבטיח שהגל לא יוצא מהאלמנט */
+    line-height: 0;
+}
+
+.wave {
+    width: 100%;
+    height: 100px; /* הוספתי גובה קבוע לאלמנט */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.checklist {
+    position: relative;
+    z-index: 2; /* התוכן יהיה מעל הגל */
+    padding: 20px;
+    list-style-type: none;
+}
+
+
+
+
+
 
 
 
@@ -349,8 +383,12 @@ ul li::before {
 </div>
 <div>
     <a href="#contact" class="btn-footer-nav">צרי קשר</a> 
-    <img class="circle-image" src="images/Logo (2).jpg" alt="לוגו מתנת האדמה" width="100%" height="100%"></img>
-    
+    <img class="circle-image" src="images/Logo.jpg" alt="לוגו מתנת האדמה" width="100%" height="100%"></img>
+<section class="wave-section">
+    <div class="wave-container">
+	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0099ff" fill-opacity="0.4" d="M0,320L60,288C120,256,240,192,360,181.3C480,171,600,213,720,202.7C840,192,960,128,1080,112C1200,96,1320,128,1380,144L1440,160L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path></svg>
+	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0099ff" fill-opacity="0.4" d="M0,128L60,144C120,160,240,192,360,218.7C480,245,600,267,720,234.7C840,203,960,117,1080,106.7C1200,96,1320,160,1380,192L1440,224L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>    
+	</div>
     <ul class="checklist">
         <li>מתמודדים עם משבר או דיכאון?</li>
         <li>חיים עם התמודדות נפשית מורכבת או הפרעת אישיות?</li>
@@ -358,27 +396,39 @@ ul li::before {
         <li>עברתם טראומה בעבר או בהווה?</li>
         <li>נמצאים בפוסט טראומה?</li>
     </ul>
+</section>
     
     <p class="highlight">אם עניתם בחיוב על לפחות אחת מהשאלות -</p>
     <p class="highlight">אני כאן בשבילכם, ויש בידי את היכולת לסייע לכם</p>
 </div>
 
+
 <div>
-<h1>טיפולים רגשיים ונפשיים בהתאמה אישית</h1>
-<ul class="checklist">
+
+<section class="wave-section">
+    <div class="wave-container">
+	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#e7008a" fill-opacity="0.2" d="M0,256L120,218.7C240,181,480,107,720,74.7C960,43,1200,53,1320,58.7L1440,64L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z"></path></svg>
+	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#e7008a" fill-opacity="0.2" d="M0,128L48,133.3C96,139,192,149,288,154.7C384,160,480,160,576,186.7C672,213,768,267,864,288C960,309,1056,299,1152,277.3C1248,256,1344,224,1392,208L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+	
+		</div>
+	<h1>טיפולים רגשיים ונפשיים בהתאמה אישית</h1>
+
+    <ul class="checklist">
 	<li>טיפול במצבי משבר, דיכאון, חרדות, טראומות בעבר ובהווה, פוסט טראומה, פגיעות מיניות, התעללות נרקיסיסטית, מחלות נפשיות, הפרעות אישיות ועוד.</li>
 	<li>שיטות טיפול – פסיכותרפיה דינמית, טיפול קוגניטיבי התנהגותי (cbt), EMDR ביופידבק</li>
-	
-	<h2>אסי גרינברג - מטפלת ופסיכוטרפית</h2>
-	<p> בעלת תואר 2 בפסיכוטרפיה, ובעלת הסמכות רבות בתחום הטיפולי, כמו CBT וEDMR</p>
-</ul>
+    </ul>
+
+</div>
+</section>
+
+<div>
 	<section>
 		<h3>השאירי פרטים, או צרי קשר ישירות דרך הוואטסאפ!</h3>
 		<div id="contact">
 			<iframe src="colorlib-regform-23/details.html" width="100%" height="700" style="border:none;"></iframe>
 		</div>
     </section>
-    </div>
+
 </div>
 
     
