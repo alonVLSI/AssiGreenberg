@@ -331,50 +331,47 @@ ul li::before {
     position: relative;
     background-color: #d4e6f1;
     text-align: center;
-    padding: 50px 20px;
-    overflow: hidden; /* חיתוך הגל */
-	    border-radius: 20px; /* עיגול הפינות */
-	
+    padding: 100px 20px; /* הגדלתי את ה-padding כדי לאפשר מקום לגלים */
+    overflow: hidden;
+    border-radius: 20px;
 }
 
 .wave-container {
     position: absolute;
-    bottom: 0;
-    left: 0;
     width: 100%;
-    overflow: hidden; /* מבטיח שהגל לא יוצא מהאלמנט */
-    line-height: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    pointer-events: none; /* מונע מהגלים להשפיע על אינטראקציות */
 }
 
 .wave {
-    width: 100%;
-    height: 100px; /* הוספתי גובה קבוע לאלמנט */
     position: absolute;
+    width: 100%;
+    height: auto;
+}
+
+.wave-top {
+    top: 0;
+}
+
+.wave-bottom {
     bottom: 0;
-    left: 0;
+}
+
+svg {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 .checklist {
     position: relative;
-    z-index: 2; /* התוכן יהיה מעל הגל */
+    z-index: 2; /* מוודא שהתוכן יישב מעל הגלים */
     padding: 20px;
     list-style-type: none;
 }
-
-
-svg {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-
-
-
-
-
-
-
 
 
 </style>
@@ -391,9 +388,17 @@ svg {
     <img class="circle-image" src="images/Logo.jpg" alt="לוגו מתנת האדמה" width="100%" height="100%"></img>
 <section class="wave-section">
     <div class="wave-container">
-	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="xMidYMin meet"><path fill="#0099ff" fill-opacity="0.4" d="M0,320L60,288C120,256,240,192,360,181.3C480,171,600,213,720,202.7C840,192,960,128,1080,112C1200,96,1320,128,1380,144L1440,160L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path></svg>
-	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="xMidYMin meet"><path fill="#0099ff" fill-opacity="0.4" d="M0,128L60,144C120,160,240,192,360,218.7C480,245,600,267,720,234.7C840,203,960,117,1080,106.7C1200,96,1320,160,1380,192L1440,224L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>    
-	</div>
+        <div class="wave wave-top">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="xMidYMin meet">
+                <path fill="#0099ff" fill-opacity="0.4" d="M0,320L60,288C120,256,240,192,360,181.3C480,171,600,213,720,202.7C840,192,960,128,1080,112C1200,96,1320,128,1380,144L1440,160L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path>
+            </svg>
+        </div>
+        <div class="wave wave-bottom">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="xMidYMin meet">
+                <path fill="#0099ff" fill-opacity="0.4" d="M0,128L60,144C120,160,240,192,360,218.7C480,245,600,267,720,234.7C840,203,960,117,1080,106.7C1200,96,1320,160,1380,192L1440,224L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
+            </svg>
+        </div>
+    </div>
     <ul class="checklist">
         <li>מתמודדים עם משבר או דיכאון?</li>
         <li>חיים עם התמודדות נפשית מורכבת או הפרעת אישיות?</li>
@@ -402,6 +407,7 @@ svg {
         <li>נמצאים בפוסט טראומה?</li>
     </ul>
 </section>
+
     
     <p class="highlight">אם עניתם בחיוב על לפחות אחת מהשאלות -</p>
     <p class="highlight">אני כאן בשבילכם, ויש בידי את היכולת לסייע לכם</p>
