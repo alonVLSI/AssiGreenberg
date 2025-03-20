@@ -413,6 +413,34 @@ svg {
         flex: 1;
         text-align: right;
     }
+	.about-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+.text-container {
+    flex: 1;
+}
+
+/* עיצוב למובייל */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .image-container {
+        order: -1; /* שם את התמונה מעל הטקסט */
+    }
+}
+
 </style>
 <script src="https://code.jquery.com/jquery-1.12.4.js" type="text/javascript"></script>
   
