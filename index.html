@@ -60,7 +60,6 @@ a:hover {
 }
 
 h1, h2 {
-    word-wrap: break-word;
     text-align: center;
 }
 h1, h2, h3 {
@@ -107,7 +106,18 @@ p:last-of-type, p:nth-last-of-type(2) {
     color: #d32f2f; /* צבע אדום כהה להדגשה */
 }
 
-/* עיצוב רשימה עם אייקון V */
+/* עיצוב החלק עם תמונת רקע */
+.section-background {
+    background-image: url('images/screen.jpg'); /* עדכן לכתובת התמונה */
+    background-size: cover;
+    background-position: center;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    color: white;
+}
+
+/* עיצוב רשימה עם בועת מחשבה */
 ul.checklist {
     list-style: none;
     padding: 0;
@@ -118,7 +128,7 @@ ul.checklist li {
     position: relative;
     padding-right: 60px;
     font-size: 20px;
-    color: #4f4f4f;
+    color: black    ; 
     opacity: 0;
     transform: translateX(30px);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
@@ -132,12 +142,13 @@ ul.checklist li::before {
     font-size: 24px;
 }
 
-
 /* הנפשת הרשימה */
 ul.checklist li.show {
     opacity: 1;
     transform: translateX(0);
 }
+
+
 h1.show {
     opacity: 1;
     transform: translateX(0);
@@ -316,12 +327,6 @@ ul li::before {
     transform: translateX(0);
 }
 
-.checklist {
-    position: relative;
-    z-index: 2; /* מוודא שהתוכן יישב מעל הגלים */
-    padding: 20px;
-    list-style-type: none;
-}
 
 
 
@@ -413,10 +418,30 @@ ul li::before {
             color: #4a7c59;
             animation: fadeIn 2s ease-out 3s forwards;
         }
-		ul.therapy-list {
+ul.therapy-list {
     list-style: none; /* מסיר את הנקודות הרגילות */
-    padding: 0;
+    padding: 20px;
     margin: 0;
+    border-radius: 10px;
+    position: relative;
+    background-image: url('images/frame.jpg'); /* קישור לתמונה */
+    background-size: cover; /* שהרקע יתפרס על כל השטח */
+    background-position: center; /* שהתמונה תהיה ממורכזת */
+    background-repeat: no-repeat;
+    color: white; /* טקסט בהיר */
+    overflow: hidden;
+}
+
+ul.therapy-list::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* שכבה כהה מעל התמונה */
+    border-radius: 10px;
+    z-index: 0;
 }
 
 ul.therapy-list li {
@@ -425,6 +450,10 @@ ul.therapy-list li {
     margin-bottom: 12px; /* רווח בין השורות */
     font-size: 18px; /* גודל טקסט נוח לקריאה */
     line-height: 1.6; /* מרווח בין שורות */
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    z-index: 1;
 }
 
 ul.therapy-list li::before {
@@ -439,6 +468,7 @@ ul.therapy-list li.show {
     opacity: 1;
     transform: translateX(0);
 }
+
 @keyframes fadeInSlide {
     0% {
         opacity: 0;
@@ -454,12 +484,19 @@ ul.therapy-list li.show {
     opacity: 0; /* כדי לוודא שהתוכן מוסתר בהתחלה */
     animation: fadeInSlide 1s ease-out forwards;
 }
-.section-background {
-    position: relative;
-    background: url('images/frame (2).jpg') center/cover no-repeat;
-    padding: 20px 60px;
-    text-align: center;
+
+.hidden {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
+
+/* כשהאלמנט נכנס למסך, נוסיף לו את המחלקה הזו */
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 
 </style>
 <script src="https://code.jquery.com/jquery-1.12.4.js" type="text/javascript"></script>
@@ -484,45 +521,45 @@ ul.therapy-list li.show {
     <a href="#contact" class="btn-footer-nav">צור קשר</a> 
 	<img class="circle-image" src="images/Logo_circle.png" alt="אסי גרינברגהאדמה" width="100%" height="100%"></img>
 	<img  src="images/sanka.png" alt="אסי גרינברג משפט חיזוק" width="100%" height="100%"></img>
-<section class="section-background">
+<section class="section-background hidden">
 	<h2 style="font-size:46px"> מרגישים תקועים?</h2>
     <ul class="checklist">
-        <li>מצבי רוח משתנים❓</li>
-        <li>חוסר איזון❓</li>
-        <li>מחשבות טורדניות❓</li>
-        <li>חוסר ויסות רגשי❓</li>
-        <li>משבר פתאומי או כזה שמלווה אתכם כבר תקופה ארוכה❓</li>
+        <li class="hidden">מצבי רוח משתנים❓</li>
+        <li class="hidden">חוסר איזון❓</li>
+        <li class="hidden">מחשבות טורדניות❓</li>
+        <li class="hidden">חוסר ויסות רגשי❓</li>
+        <li class="hidden">משבר פתאומי או כזה שמלווה אתכם כבר תקופה ארוכה❓</li>
     </ul>
 </section>
 
     
-    <p class="highlight">אם עניתם "כן" לאחת השאלות,
+    <p class="highlight hidden">אם עניתם "כן" לאחת השאלות,
 והחלטתם לבחור בעצמכם ובאושר שלכם –</p>
-    <p class="highlight"> אני כאן בשבילכם💛</p>
+    <p class="highlight hidden"> אני כאן בשבילכם💛</p>
 
 
 </div>
 <div>
-    <h1>נעים להכיר, אני אסי</h1>
-	<img  src="images/assi.jpg" alt="אסי גרינברג משפט חיזוק" width="100%" height="100%"></img>
-	<h2>ואני מזמינה אתכם לצאת יחד למסע
+    <h1 class="hidden">נעים להכיר, אני אסי</h1>
+	<img class="hidden" src="images/assi.jpg" alt="אסי גרינברג משפט חיזוק" width="100%" height="100%"></img>
+	<h2 class="hidden">ואני מזמינה אתכם לצאת יחד למסע
 לפלס את הדרך לריפוי, שינוי וצמיחה אמיתית.
 </h2>
 <ul class="therapy-list">
-    <li>אני מטפלת רגשית ועובדת סוציאלית קלינית (MSW, תואר שני), עם ניסיון של כעשור בשירות הציבורי, בו ליוויתי יחידים ומשפחות בהתמודדות עם משברי חיים וקשיים רגשיים.</li>
-    <li>כיום אני מטפלת בקליניקה פרטית, ומאמינה שכל מפגש הוא מרחב בטוח ותומך, בו נוכל יחד לזהות דפוסים מעכבים, להשתחרר מחסמים ולבנות עבורך דרך חדשה, מעצימה ומשמעותית.</li>
-    <li>הגישה הטיפולית שלי היא אינטגרטיבית ומותאמת אישית לכל מטופל, תוך שילוב כלים מחקריים מוכחים מעולמות ה-CBT וה-EMDR – שילוב עוצמתי שמאפשר תהליך עמוק, ממוקד ומרפא. </li>
-    <li>טיפול קוגניטיבי-התנהגותי (CBT) – שיטה פרקטית וממוקדת, המסייעת בזיהוי ושינוי דפוסי מחשבה והרגלים מעכבים. כל התנהגות היא נרכשת ונלמדת לאורך החיים- וכדי לשנות אותה, עלינו להבין לעומק את דרך החשיבה שלנו. דרך כלים יישומיים, נלמד להתמודד עם אתגרים בצורה בריאה ומקדמת.</li>
+    <li class="hidden">אני מטפלת רגשית ועובדת סוציאלית קלינית (MSW, תואר שני), עם ניסיון של כעשור בשירות הציבורי, בו ליוויתי יחידים ומשפחות בהתמודדות עם משברי חיים וקשיים רגשיים.</li>
+    <li class="hidden">כיום אני מטפלת בקליניקה פרטית, ומאמינה שכל מפגש הוא מרחב בטוח ותומך, בו נוכל יחד לזהות דפוסים מעכבים, להשתחרר מחסמים ולבנות עבורך דרך חדשה, מעצימה ומשמעותית.</li>
+    <li class="hidden">הגישה הטיפולית שלי היא אינטגרטיבית ומותאמת אישית לכל מטופל, תוך שילוב כלים מחקריים מוכחים מעולמות ה-CBT וה-EMDR – שילוב עוצמתי שמאפשר תהליך עמוק, ממוקד ומרפא. </li>
+    <li class="hidden">טיפול קוגניטיבי-התנהגותי (CBT) – שיטה פרקטית וממוקדת, המסייעת בזיהוי ושינוי דפוסי מחשבה והרגלים מעכבים. כל התנהגות היא נרכשת ונלמדת לאורך החיים- וכדי לשנות אותה, עלינו להבין לעומק את דרך החשיבה שלנו. דרך כלים יישומיים, נלמד להתמודד עם אתגרים בצורה בריאה ומקדמת.</li>
 </ul>
 </div>
 <div>
-<video id="myVideo" width="100%" muted playsinline>
+<video class="hidden" id="myVideo" width="100%" muted playsinline>
     <source src="images/growing.mp4" type="video/mp4">
     הדפדפן שלך לא תומך בווידאו.
 </video>
 	<section>
-		<h2 style="font-weight: bold;">השאירו פרטים, או צרו קשר ישירות דרך הוואטסאפ!</h2>
-		<div id="contact">
+		<h2 class="hidden" style="font-weight: bold;">השאירו פרטים, או צרו קשר ישירות דרך הוואטסאפ!</h2>
+		<div id="contact" class="hidden">
 			<iframe src="colorlib-regform-23/details.html" width="100%" height="750" style="border:none;"></iframe>
 		</div>
     </section>
@@ -532,14 +569,21 @@ ul.therapy-list li.show {
 
     
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-    const elements = document.querySelectorAll("ul.checklist li, ul.therapy-list li, p.highlight,h1");
-    elements.forEach((el, index) => {
-        setTimeout(() => {
-            el.classList.add("show");
-        }, index * 300);
-    });
+document.addEventListener("DOMContentLoaded", function () {
+    const hiddenElements = document.querySelectorAll(".hidden");
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+                observer.unobserve(entry.target); // כדי שלא יופעל שוב
+            }
+        });
+    }, { threshold: 0.2 }); // מופעל כשהאלמנט 20% בתוך המסך
+
+    hiddenElements.forEach((el) => observer.observe(el));
 });
+
 document.addEventListener("DOMContentLoaded", function () {
     const video = document.getElementById("myVideo");
 
