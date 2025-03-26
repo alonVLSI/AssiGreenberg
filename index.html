@@ -512,6 +512,20 @@ ul.therapy-list li.show {
         background-repeat: no-repeat;
     }
 }
+/* שיפור הצגת סמל הנגישות במובייל */
+@media (max-width: 768px) {
+    .accessibility-icon {
+        width: 50px;  /* הגדלה של רוחב הסמל */
+        height: 50px; /* הגדלה של גובה הסמל */
+        font-size: 32px; /* הגדלת גודל הסמל */
+        display: block; /* תוודא שהוא מוצג כבלוק */
+        position: fixed; /* מיקום קבוע */
+        bottom: 20px; /* המרחק מלמטה */
+        right: 20px; /* המרחק מימין */
+        z-index: 1000; /* לוודא שהסמל יהיה מעל לתוכן */
+    }
+}
+
 </style>
 <script src="https://code.jquery.com/jquery-1.12.4.js" type="text/javascript"></script>
   
