@@ -247,41 +247,6 @@ ul li::before {
 .social-links-header .whatsapp {
     color: #25D366;
 }
-
-@media (max-width: 767px) {
-    .social-links-header {
-        position: fixed;
-        top: 10px;
-        left: 10px;
-        flex-direction: column;
-        gap: 15px;
-        z-index: 1000;
-    }
-
-    .social-links-header a:nth-child(1) { 
-        order: -1; /* וואטסאפ יהיה ראשון */
-    }
-
-    .btn-footer-nav {
-        position: fixed;
-        top: 80px; /* מתחת ללינקים החברתיים */
-        left: 10px;
-        background-color: #6c935c; /* רקע ירוק */
-        color: white;
-        padding: 10px 20px;
-        font-size: 18px;
-        text-align: center;
-        border-radius: 5px;
-        text-decoration: none;
-        width: fit-content; /* שומר על גודל טבעי של הכפתור */
-        max-width: 200px; /* מונע ממנו להיות רחב מדי */
-        display: inline-block; /* מונע ממנו להימתח על כל הרוחב */
-        z-index: 1000;
-    }
-}
-
-
-
     .social-links-header a {
         font-size: 20px;
         display: block;
@@ -529,6 +494,62 @@ ul.therapy-list li.show {
             margin: 10px auto 0;
             border-radius: 2px;
         }
+/* תיקון מיקום הוואטסאפ */
+@media (max-width: 767px) {
+    .social-links-header {
+        position: fixed;
+        top: 10px;
+        left: 10px;  /* שים את הוואטסאפ בצד שמאל */
+        flex-direction: column;
+        gap: 15px;
+        z-index: 1000;
+    }
+
+    .social-links-header a:nth-child(1) {
+        order: -1; /* וואטסאפ יהיה הראשון */
+    }
+
+    /* תיקון כפתור צור קשר */
+    .btn-footer-nav {
+        position: fixed;
+        top: 80px; /* שים את הכפתור מתחת ללינקים החברתיים */
+        left: 10px;  /* מציב בצד שמאל */
+        background-color: #6c935c;
+        color: white;
+        padding: 10px 20px;
+        font-size: 18px;
+        text-align: center;
+        border-radius: 5px;
+        text-decoration: none;
+        width: fit-content;
+        max-width: 200px;
+        display: inline-block;
+        z-index: 1000;
+    }
+
+    /* תיקון רגישות של כפתור צור קשר */
+    .btn-footer-nav:hover {
+        background-color: #587a46;
+    }
+}
+/* סגנון רק במובייל */
+@media (max-width: 768px) {
+    /* מיקום קבוע לסושיאל לינקס */
+    .social-links-header a {
+        position: fixed;
+        top: 20px; /* וודא שהסמל נשאר למעלה */
+        left: 10px;
+        z-index: 1000; /* חשוב שיהיה מעל תוכן */
+    }
+
+    /* תיקון למצב גלילה */
+    .social-links-header, .btn-footer-nav {
+        position: fixed; /* מונע מהם להתגלות במעבר */
+        z-index: 1000; /* מוודא שיהיו תמיד מעל */
+    }
+}
+
+
 
 
 
