@@ -512,8 +512,7 @@ ul.therapy-list li.show {
     /* תיקון כפתור צור קשר */
     .btn-footer-nav {
         position: fixed;
-        top: 20px; /* שים את הכפתור מתחת ללינקים החברתיים */
-		right:0px;
+        top: 10px; /* שים את הכפתור מתחת ללינקים החברתיים */
         left: 10px;  /* מציב בצד שמאל */
         background-color: #6c935c;
         color: white;
@@ -523,9 +522,12 @@ ul.therapy-list li.show {
         border-radius: 5px;
         text-decoration: none;
         width: auto;  /* בוטל רוחב 100% */
-        max-width: 30px;  /* רוחב מקסימלי 200px */
-		max-height:30px;
+        max-width: 60px;  /* רוחב מקסימלי 200px */
+		max-height:60px;
         box-sizing: border-box; /* לוודא שה-padding לא משפיע על הרוחב */
+		flex-direction: column;
+        gap: 15px;
+        z-index: 1000;
     }
 
     /* תיקון רגישות של כפתור צור קשר */
