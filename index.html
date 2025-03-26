@@ -250,12 +250,26 @@ ul li::before {
 
 @media (max-width: 767px) {
     .social-links-header {
-        position: absolute;
+        position: fixed;
         top: 10px;
-        right: 30px;
+        left: 10px;
         flex-direction: column;
         gap: 15px;
+        z-index: 1000;
     }
+
+    .social-links-header a:nth-child(1) { 
+        order: -1; /* וואטסאפ יהיה ראשון */
+    }
+
+    .btn-footer-nav {
+        position: fixed;
+        top: 80px; /* מתחת לסושיאל לינקס */
+        left: 10px;
+        z-index: 1000;
+    }
+}
+
 
     .social-links-header a {
         font-size: 20px;
