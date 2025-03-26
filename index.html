@@ -521,10 +521,10 @@ ul.therapy-list li.show {
         text-align: center;
         border-radius: 5px;
         text-decoration: none;
-        width: fit-content;
         max-width: 200px;
-        display: inline-block;
-        z-index: 1000;
+        width: 100%; /* כפתור שמימד הרוחב נשאר משתנה */
+        box-sizing: border-box; /* חשוב למנוע התפשטות של ה-padding */
+        height: auto; /* מאפשר לגובה להסתגל לתוכן */
     }
 
     /* תיקון רגישות של כפתור צור קשר */
@@ -532,6 +532,7 @@ ul.therapy-list li.show {
         background-color: #587a46;
     }
 }
+
 /* סגנון רק במובייל */
 @media (max-width: 768px) {
     /* מיקום קבוע לסושיאל לינקס */
