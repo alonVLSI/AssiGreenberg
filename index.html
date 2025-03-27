@@ -59,9 +59,6 @@ a:hover {
   text-decoration: underline; /* קו תחתון בעת ריחוף מעל קישור */
 }
 
-h1, h2 {
-    text-align: center;
-}
 h1, h2, h3 {
     font-family: 'Poppins', sans-serif; /* גופן לכותרות */
 	color: #1a237e; /* כחול כהה */
@@ -69,6 +66,8 @@ h1, h2, h3 {
 }
 h1,h2 {
     transform: translateX(30px);
+	    text-align: center;
+
 }
 
 /* כשהוא נטען */
@@ -137,7 +136,7 @@ h1.show {
 p.highlight {
     font-size: 24px;
     font-weight: bold;
-    color: #1a237e; /* כחול כהה */
+    color: black;
     transform: translateX(30px);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
@@ -173,11 +172,9 @@ button:hover, .cta-button:hover {
 }
 
 .circle-image {
-    width: 50%;
+    width: 70px; /* ניתן לשנות לפי הצורך */
+    height: 70px;
     border-radius: 50%;
-    display: block;
-	margin: 0 auto 20px; /* רווח של 20 פיקסלים מתחת ללוגו */
-
 }
 
 ul {
@@ -203,13 +200,12 @@ ul li::before {
     color: #6c935c;
     font-size: 20px;
 }
-
-/* כפתורי הסושיאל לינקס בפינה הימנית */
 .social-links-header {
-    position: fixed;
-    bottom: 60px; /* מציב את הסושיאל לינקס קצת מעל כפתור צור קשר */
-    right: 20px;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* מרכז את האלמנטים באמצע */
+    flex-grow: 1;
+    gap: 15px; /* רווח בין האלמנטים */
 }
 
 .social-links-header a {
@@ -226,20 +222,11 @@ ul li::before {
     background-color: #e0e0e0; /* צבע רקע בה-hover אם רוצים */
 }
 
-/* כפתור הניווט בפינה הימנית */
-.btn-footer-nav {
-    position: fixed;
-    bottom: 20px; /* הכפתור יהיה מתחת לסושיאל לינקס */
-    right: 20px;
-    background-color: #6c935c; /* רקע ירוק לכפתור */
-    color: white;
-    padding: 10px 20px;
-    font-size: 18px;
-    text-align: center;
-    border-radius: 5px;
+.whatsapp {
+    font-size: 24px;
+    color: green;
     text-decoration: none;
 }
-
 .btn-footer-nav:hover {
     background-color: #587a46; /* צבע רקע כשהכפתור נלחץ */
 }
@@ -388,11 +375,7 @@ ul.therapy-list {
     margin: 0;
     border-radius: 10px;
     position: relative;
-    background-image: url('images/frame.jpg'); /* קישור לתמונה */
-    background-size: cover; /* שהרקע יתפרס על כל השטח */
-    background-position: center; /* שהתמונה תהיה ממורכזת */
-    background-repeat: no-repeat;
-    color: white; /* טקסט בהיר */
+    color: black; /* טקסט בהיר */
     overflow: hidden;
 }
 
@@ -403,8 +386,6 @@ ul.therapy-list::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* שכבה כהה מעל התמונה */
-    border-radius: 10px;
     z-index: 0;
 }
 
@@ -425,7 +406,6 @@ ul.therapy-list li::before {
     position: absolute;
     right: 0;
     font-size: 20px;
-    color: #6c935c; /* ירוק כהה */
 }
 
 ul.therapy-list li.show {
@@ -469,13 +449,6 @@ ul.therapy-list li.show {
 		}	
     
 }
-@media (max-width: 768px) {
-    ul.therapy-list {
-        background-image: url('images/frame.jpg'); /* התמונה שברצונך להציג */
-        background-size: cover;  /* סידור התמונה על כל הרקע */
-        background-repeat: no-repeat;
-    }
-}
         .signature {
             font-family: "Playfair Display", serif;
             font-size: 24px;
@@ -508,25 +481,6 @@ ul.therapy-list li.show {
         order: -1; /* וואטסאפ יהיה הראשון */
     }
 
-    /* תיקון כפתור צור קשר */
-    .btn-footer-nav {
-        position: fixed;
-        top: 80px; /* שים את הכפתור מתחת ללינקים החברתיים */
-        left: 10px;  /* מציב בצד שמאל */
-        background-color: #6c935c;
-        color: white;
-        font-size: 18px;
-        text-align: center;
-        border-radius: 5px;
-        text-decoration: none;
-        width: auto;  /* בוטל רוחב 100% */
-        max-width: 60px;  /* רוחב מקסימלי 200px */
-		max-height:60px;
-        box-sizing: border-box; /* לוודא שה-padding לא משפיע על הרוחב */
-		flex-direction: column;
-        gap: 15px;
-        z-index: 1000;
-    }
 
     /* תיקון רגישות של כפתור צור קשר */
     .btn-footer-nav:hover {
@@ -547,6 +501,29 @@ ul.therapy-list li.show {
     }
 }
 
+.header_page {
+    display: flex;
+    justify-content: space-between; /* מרווח בין האלמנטים */
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+}
+.logo-container {
+    display: flex;
+    justify-content: flex-end; /* דוחף את הלוגו לצד ימין */
+    flex-grow: 1;
+}
+.btn-footer-nav {
+    background-color: #6c935c;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 0; /* הופך את הכפתור למלבני עם קצוות ישרים */
+    text-decoration: none;
+    padding: 10px 20px;
+    display: inline-block;
+    width: auto;
+}
 
 
 
@@ -560,39 +537,46 @@ ul.therapy-list li.show {
 <body>
 
     <div class="container">
-<div class="social-links-header">
-    <a href="https://wa.me/972545420711" target="_blank" class="whatsapp">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
+<div class="header_page">
+    <div class="logo-container">
+        <img class="circle-image hidden" src="images/Logo_circle.png" alt="אסי גרינברג האדמה">
+    </div>
+    <div class="social-links-header">
+        <a href="https://wa.me/972545420711" target="_blank" class="whatsapp">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <a href="#contact" class="btn-footer-nav">צור קשר</a>
+    </div>
 </div>
+
+
+
 <script src="https://cdn.userway.org/widget.js" data-account="VZA8XqqwST"></script>
 
 <div style="text-align:center;">
-    <a href="#contact" class="btn-footer-nav">צור קשר</a> 
-	<img class="circle-image hidden" src="images/Logo_circle.png" alt="אסי גרינברגהאדמה" width="100%" height="100%"></img>
-	<img  src="images/sanka.jpg" class="hidden" alt="אסי גרינברג משפט חיזוק" width="100%" height="100%"></img>
+	<img  src="images/sanka.jpg" class="hidden" alt="אסי גרינברג משפט חיזוק" width="100%" height="100%" style="border-radius: ;"></img>
 <section class="hidden" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; width: 100%;">
-<p style="font-size: 46px; margin-bottom: 10px; color: #00008B; text-align: center; width: 100%; padding-bottom: 10px; text-decoration: underline;">מרגישים תקועים?</p>
+<p style="font-size: 46px; margin-bottom: 10px; color: darkgreen; text-align: center; width: 100%; padding-bottom: 10px; text-decoration: underline;">מרגישים תקועים?</p>
     <ul class="checklist" style="padding: 0; margin: 0;">
-        <li class="hidden">💭 מצבי רוח משתנים❓</li>
-        <li class="hidden">💭 חוסר איזון❓</li>
-        <li class="hidden">💭 מחשבות טורדניות❓</li>
-        <li class="hidden">💭 חוסר ויסות רגשי❓</li>
-        <li class="hidden">💭 משבר פתאומי או כזה שמלווה אתכם כבר תקופה ארוכה❓</li>
-    </ul>
+<li class="hidden">➤ מרגישים שהמצב הרגשי שלכם משתנה ללא שליטה?</li>
+<li class="hidden">➤ מתקשים לשמור על איזון בחיי היומיום?</li>
+<li class="hidden">➤ מחשבות טורדניות לא מרפות?</li>
+<li class="hidden">➤ מרגישים מוצפים רגשית?</li>
+<li class="hidden">➤ מתמודדים עם משבר שמקשה עליכם להמשיך הלאה?</li>
+</ul>
 </section>
 
+<p class="highlight hidden">
+אם אחד מהדברים האלה מוכר לכם, דעו שאתם לא לבד.  
+אפשר לשנות דפוסים וליצור איזון חדש בחיים –  
+</p>
+<p class="highlight hidden">אני כאן בשבילכם 💛</p>
 
-
-    
-    <p class="highlight hidden">אם עניתם "כן" לאחת השאלות,
-והחלטתם לבחור בעצמכם ובאושר שלכם –</p>
-    <p class="highlight hidden"> אני כאן בשבילכם💛</p>
 
 
 </div>
 <div>
-    <h1 class="hidden" style = "color:black">נעים להכיר, אני אסי</h1>
+    <h1 class="hidden" style = "color:darkgreen">נעים להכיר, אני אסי</h1>
 	<img class="hidden" src="images/assi.jpg" alt="אסי גרינברג משפט חיזוק" width="100%" height="100%"></img>
 	<h2 class="hidden" style = "color:black">ואני מזמינה אתכם לצאת יחד למסע
 לפלס את הדרך לריפוי, שינוי וצמיחה אמיתית.
@@ -617,7 +601,6 @@ ul.therapy-list li.show {
     הדפדפן שלך לא תומך בווידאו.
 </video>
 	<section>
-		<h2 class="hidden" style="font-weight: bold; color:black">השאירו פרטים, או צרו קשר ישירות דרך הוואטסאפ!</h2>
 		<div id="contact" class="hidden">
 			<iframe src="colorlib-regform-23/details.html" width="100%" height="750" style="border:none;"></iframe>
 		</div>
