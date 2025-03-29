@@ -171,11 +171,7 @@ button:hover, .cta-button:hover {
     color: #4a7042;
 }
 
-.circle-image {
-    width: 70px; /* ניתן לשנות לפי הצורך */
-    height: 70px;
-    border-radius: 50%;
-}
+
 
 ul {
     list-style: none;
@@ -214,8 +210,6 @@ ul li::before {
     color: #333; /* צבע טקסט רגיל, בלי רקע */
     text-decoration: none;
     padding: 10px;
-    border-radius: 50%;
-    display: inline-block;
 }
 
 .social-links-header a:hover {
@@ -228,16 +222,11 @@ ul li::before {
     text-decoration: none;
 }
 .btn-footer-nav:hover {
-    background-color: #587a46; /* צבע רקע כשהכפתור נלחץ */
+    background-color: green; /* צבע רקע כשהכפתור נלחץ */
 }
 
 .social-links-header .whatsapp {
     color: #25D366;
-}
-    .social-links-header a {
-        font-size: 20px;
-        display: block;
-    }
 }
 
 @media (max-width: 600px) {
@@ -449,81 +438,43 @@ ul.therapy-list li.show {
 		}	
     
 }
-        .signature {
-            font-family: "Playfair Display", serif;
-            font-size: 24px;
-            color: #C4A484; /* זהב רך */
-            text-align: center;
-            font-weight: bold;
-            position: relative;
-            padding-bottom: 10px;
-        }
-        .signature::after {
-            content: "";
-            display: block;
-            width: 50%;
-            height: 2px;
-            background-color: #C4A484;
-            margin: 10px auto 0;
-            border-radius: 2px;
-        }
-/* תיקון מיקום הוואטסאפ */
-@media (max-width: 767px) {
-    .social-links-header {
-        position: fixed;
-        top: 100px;
-        right: 20px;  /* שים את הוואטסאפ בצד שמאל */
-        gap: 15px;
-        z-index: 1000;
-    }
 
-    .social-links-header a:nth-child(1) {
-        order: -1; /* וואטסאפ יהיה הראשון */
-    }
-
-
-    /* תיקון רגישות של כפתור צור קשר */
-    .btn-footer-nav:hover {
-        background-color: #587a46;
-    }
-}
-
-
-
-/* סגנון רק במובייל */
-@media (max-width: 768px) {
-    /* מיקום קבוע לסושיאל לינקס */
-    .social-links-header a {
-        position: fixed;
-        top: 20px; /* וודא שהסמל נשאר למעלה */
-        left: 10px;
-        z-index: 1000; /* חשוב שיהיה מעל תוכן */
-    }
-}
 
 .header_page {
     display: flex;
-    justify-content: space-between; /* מרווח בין האלמנטים */
-    align-items: center;
+    align-items: center; /* מיישר אלמנטים אנכית */
+    justify-content: space-between; /* מחלק ריווח שווה */
+    gap: 20px; /* רווח בין האלמנטים */
     padding: 10px;
-    width: 100%;
 }
-.logo-container {
+
+.circle-image {
+    width: 100px; /* ניתן לשנות לפי הצורך */
+    height: 100px;
+    border-radius: 50%;
+}
+
+.social-links-header {
     display: flex;
-    justify-content: flex-end; /* דוחף את הלוגו לצד ימין */
-    flex-grow: 1;
+    align-items: center;
+    gap: 15px; /* רווח בין אייקון הוואטסאפ לכפתור */
 }
-.btn-footer-nav {
-    background-color: #6c935c;
-    color: white;
-    font-size: 18px;
-    text-align: center;
-    border-radius: 0; /* הופך את הכפתור למלבני עם קצוות ישרים */
+
+.whatsapp {
+    font-size: 24px;
+    color: #25D366;
     text-decoration: none;
-    padding: 10px 20px;
-    display: inline-block;
-    width: auto;
 }
+
+.btn-footer-nav {
+    background-color: lightgreen;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+}
+
 
 
 
@@ -538,9 +489,7 @@ ul.therapy-list li.show {
 
     <div class="container">
 <div class="header_page">
-    <div class="logo-container">
         <img class="circle-image hidden" src="images/Logo_circle.png" alt="אסי גרינברג האדמה">
-    </div>
     <div class="social-links-header">
         <a href="https://wa.me/972545420711" target="_blank" class="whatsapp">
             <i class="fa-brands fa-whatsapp"></i>
