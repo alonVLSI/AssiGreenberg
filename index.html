@@ -97,20 +97,16 @@ p.show {
 
 ul.checklist {
     list-style: none; /* מבטל את הסמלים ברשימה */
-    padding: 0;
 	display: flex;
 	    width: 100%;
     flex-direction: column;
     align-items: flex-start;;
     justify-content: center;
-    text-align: right;
-	padding-right: 20px;
 	direction: rtl;
 }
 
 ul.checklist li {
     position: relative;
-    padding-right: 60px;
     font-size: 20px;
     color: black    ; 
     opacity: 0;
@@ -119,7 +115,7 @@ ul.checklist li {
     margin-bottom: 10px;
 	 list-style: none;
 	     width: 100%;
-    text-align: right; /* מוודא שהטקסט עצמו מיושר לימין */
+    text-align: center; /* מוודא שהטקסט עצמו מיושר לימין */
 }
 
 
@@ -360,6 +356,8 @@ ul.therapy-list {
     position: relative;
     color: black; /* טקסט בהיר */
     overflow: hidden;
+    padding: 0;
+    text-align: right;
 }
 
 ul.therapy-list::before {
@@ -382,6 +380,8 @@ ul.therapy-list li {
     transform: translateX(-20px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
     z-index: 1;
+    transform: translateY(20px);
+    margin-bottom: 15px;
 }
 
 ul.therapy-list li::before {
@@ -488,16 +488,16 @@ ul.therapy-list li.show {
 
 <script src="https://cdn.userway.org/widget.js" data-account="VZA8XqqwST"></script>
 
-<div style="text-align:center;">
-	<img  src="images/sanka.jpg" class="hidden" alt="אסי גרינברג משפט חיזוק" width="100%" height="100%" style="border-radius:10%" ;"></img>
-<section class="hidden" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; width: 100%;">
-<p style="font-size: 46px; margin-bottom: 10px; color: darkgreen; text-align: center;  padding-bottom: 10px; text-decoration: underline;">מרגישים תקועים?</p>
-    <ul class="checklist"">
-<li class="hidden">➤ מרגישים שהמצב הרגשי שלכם משתנה ללא שליטה?</li>
-<li class="hidden">➤ מתקשים לשמור על איזון בחיי היומיום?</li>
-<li class="hidden">➤ מחשבות טורדניות לא מרפות?</li>
-<li class="hidden">➤ מרגישים מוצפים רגשית?</li>
-<li class="hidden">➤ מתמודדים עם משבר שמקשה עליכם להמשיך הלאה?</li>
+<div>
+	<img  src="images/sanka.jpg" class="hidden" alt="אסי גרינברג משפט חיזוק" width="100%" height="100%" style="border-radius:10%"></img>
+<section class="hidden">
+<p style="font-size: 46px; margin-bottom: 10px; color: darkgreen; text-align: center;text-decoration: underline;">מרגישים תקועים?</p>
+<ul class="checklist" style="text-align:center">
+<li class="hidden" style="text-align:center">➤ מרגישים שהמצב הרגשי שלכם משתנה ללא שליטה?</li>
+<li class="hidden" style="text-align:center">➤ מתקשים לשמור על איזון בחיי היומיום?</li>
+<li class="hidden" style="text-align:center">➤ מחשבות טורדניות לא מרפות?</li>
+<li class="hidden" style="text-align:center">➤ מרגישים מוצפים רגשית?</li>
+<li class="hidden" style="text-align:center">➤ מתמודדים עם משבר שמקשה עליכם להמשיך הלאה?</li>
 </ul>
 </section>
 
@@ -534,10 +534,10 @@ ul.therapy-list li.show {
 	<img class="hidden" src="images/end.jpg" alt="אסי גרינברג משפט חיזוק" width="100%" height="100%"></img>
     </div>
 <div>
-<video class="hidden" id="myVideo" width="100%" muted playsinline>
+<!--<video class="hidden" id="myVideo" width="100%" muted playsinline>
     <source src="images/growing.mp4" type="video/mp4">
     הדפדפן שלך לא תומך בווידאו.
-</video>
+</video> -->
 	<section>
 		<div id="contact" class="hidden">
 			<iframe src="colorlib-regform-23/details.html" width="100%" height="770" style="border:none;"></iframe>
