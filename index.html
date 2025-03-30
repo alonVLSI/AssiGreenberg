@@ -95,15 +95,17 @@ p.show {
     transform: translateX(0);
 }
 
-
 ul.checklist {
     list-style: none; /* מבטל את הסמלים ברשימה */
     padding: 0;
 	display: flex;
+	    width: 100%;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;;
     justify-content: center;
-    text-align: center;
+    text-align: right;
+	padding-right: 20px;
+	direction: rtl;
 }
 
 ul.checklist li {
@@ -116,6 +118,8 @@ ul.checklist li {
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
     margin-bottom: 10px;
 	 list-style: none;
+	     width: 100%;
+    text-align: right; /* מוודא שהטקסט עצמו מיושר לימין */
 }
 
 
