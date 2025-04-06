@@ -787,7 +787,7 @@
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     
-    <script>
+    <script type="module">
         // Initialize AOS library
         document.addEventListener('DOMContentLoaded', function() {
             AOS.init({
@@ -796,6 +796,7 @@
                 mirror: true,
                 offset: 120
             });
+			        });
             
             // Set current year
             document.getElementById('currentYear').textContent = new Date().getFullYear();
@@ -836,46 +837,52 @@
             });
 
             // Form submission
-            document.getElementById('contactForm').addEventListener('submit', async function(event) {
-                event.preventDefault();
-                
-                const formData = new FormData(this);
-                const data = {
-                    name: formData.get("name"),
-                    phone: formData.get("phone"),
-                    message: formData.get("message"),
-                    email: formData.get("email"),
-                    site_id: "3"
-                };
-                
-                try {
-                    const response = await fetch("https://ikj2wadvg4a3psfd3qxcn42a7y0iaupn.lambda-url.eu-north-1.on.aws/", {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json"
-                        },
-                        body: JSON.stringify(data)
-                    });
+        document.getElementById('contactForm').addEventListener('submit', async function(event) 
+		{
+            event.preventDefault();
+            
+    const formData = new FormData(this);
+    const data = {
+        name: formData.get("name"),
+        phone: formData.get("phone"),
+        message: formData.get("message"),
+		email:formData.get("email"),
+        site_id: "3"
+    };
+    console.log("📤 נתונים שנשלחים לשרת:", data);
 
-                    if (!response.ok) {
-                        throw new Error(`API Error: \${response.statusText}`);
-                    }
-
-                    // Show success message with animation
-                    const formElement = document.getElementById('contactForm');
-                    formElement.innerHTML = `
-                        <div class="text-center py-8 animate__animated animate__bounceIn">
-                            <div class="text-6xl mb-4">✅</div>
-                            <h3 class="text-xl font-bold text-green-600 mb-2">תודה על פנייתך!</h3>
-                            <p class="text-gray-600">אחזור אליך בהקדם.</p>
-                        </div>
-                    `;
-                } catch (error) {
-                    console.error("Error:", error);
-                    alert('אירעה שגיאה בשליחת הטופס. אנא נסה שוב או צור קשר בטלפון.');
-                }
-            });
+    try {
+        const response = await fetch("https://ikj2wadvg4a3psfd3qxcn42a7y0iaupn.lambda-url.eu-north-1.on.aws/", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
         });
+
+        if (!response.ok) {
+            throw new Error(`API Error: ${response.statusText}`);
+        }
+
+        const result = await response.json();
+        console.log(result); // הדפסת התוצאה
+
+
+        // ניקוי השדות בטופס
+        document.getElementById("contactForm").reset();
+    } catch (error) {
+        console.error("Error:", error);
+		alert('קרתה תקלה בשליחת המייל. נא ליצור קשר ישירות בוואטסאפ');
+		return;
+    } 
+            
+            // Show success message
+            alert('תודה על פנייתך! אחזור אליך בהקדם.');
+            
+            // Reset form
+            event.target.reset();
+        });
+
     </script>
 </body>
 </html>
