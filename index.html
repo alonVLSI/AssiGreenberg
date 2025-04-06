@@ -339,7 +339,6 @@
 .heart-beat {
     animation: heartBeat 2s ease-in-out infinite;
     display: inline-block;
-    transform-origin: center; /* לוודא שהשינוי יקרה ממוקד האלמנט */
 }
 
 @keyframes heartBeat {
@@ -486,7 +485,7 @@
 </head>
 <body class="min-h-screen bg-pattern">
     <!-- Header -->
-    <header class="fixed top-0 bg-custom bg-opacity-95 backdrop-blur-sm z-50 shadow-sm">
+    <header class="fixed top-0 w-full bg-custom bg-opacity-95 backdrop-blur-sm z-50 shadow-sm">
         <nav class="max-w-7xl mx-auto px-4">
             <div class="flex items-center justify-between h-24">
                 <div class="flex items-center gap-3">
