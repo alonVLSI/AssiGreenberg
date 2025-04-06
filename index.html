@@ -385,24 +385,31 @@
             color: #128C7E;
         }
         
-        /* Improved animation for quote */
-        .typing-effect {
-            border-right: 3px solid;
-            width: 0;
-            white-space: nowrap;
-            overflow: hidden;
-            animation: typing 2s steps(20, end) forwards, blink .5s step-end infinite;
-        }
-        
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
-        }
-        
-        @keyframes blink {
-            from, to { border-color: transparent }
-            50% { border-color: #25D366 }
-        }
+.typing-effect {
+    border-right: 3px solid;
+    width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 2s steps(30, end) forwards, blink 0.5s step-end infinite;
+}
+
+/* הקלדה */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+/* הבהוב של הסמן */
+@keyframes blink {
+    50% { border-color: transparent }
+}
+
+/* אחרי 3 שניות - הסר את הסמן */
+.typing-finished {
+    border-right: none;
+}
+
+
         
         /* Section dividers */
         .wave-divider {
@@ -535,10 +542,10 @@
                         </ul>
                     </div>
 
-                    <p class="text-2xl italic mb-4" data-aos="fade-up" data-aos-delay="400">
+                    <p class="text-2xl italic mb-4" data-aos="fade-up" data-aos-delay="200">
                         אם עניתם "כן" לאחת השאלות, והחלטתם לבחור בעצמכם ובאושר שלכם –
                     </p>
-                    <p class="text-3xl font-bold text-amber-600 mb-8 glow" data-aos="fade-up" data-aos-delay="600">
+                    <p class="text-3xl font-bold text-amber-600 mb-8 glow" data-aos="fade-up" data-aos-delay="300">
                          אני כאן בשבילכם.💛
                     </p>
 
@@ -592,10 +599,10 @@
                             class="w-full h-150 object-cover transition-transform duration-700 hover:scale-105"
                         />
                         <div class="bg-gradient-to-t from-amber-50 to-white p-6">
-                            <h3 class="text-3xl font-bold text-amber-800 mb-2" data-aos="fade-up" data-aos-delay="100">
+                            <h3 class="text-4xl font-bold text-amber-800 mb-2" data-aos="fade-up" data-aos-delay="100">
                                 נעים להכיר, אני אסי
                             </h3>
-                            <p class="text-gray- text-xl" data-aos="fade-up" data-aos-delay="100">
+                            <p class="text-gray- text-2xl" data-aos="fade-up" data-aos-delay="100">
                                 ואני מזמינה אתכם לצאת יחד למסע
                                 לפלס את הדרך לריפוי, שינוי וצמיחה אמיתית.
                             </p>
@@ -606,13 +613,13 @@
                 <div data-aos="fade-left" data-aos-duration="1000">
                     <h2 class="text-4xl font-bold mb-8 gradient-text" data-aos="fade-up">הגישה הטיפולית שלי</h2>
                     <div class="space-y-6 text-gray-600 text-xl">
-                        <p class="leading-relaxed slide-up" data-aos="fade-up" data-aos-delay="200">
+                        <p class="leading-relaxed slide-up text-xl" data-aos="fade-up" data-aos-delay="150">
                             אני מטפלת רגשית ועובדת סוציאלית קלינית (MSW, תואר שני), עם ניסיון של כעשור בשירות הציבורי, בו ליוויתי יחידים ומשפחות בהתמודדות עם משברי חיים וקשיים רגשיים.
                         </p>
-                        <p class="leading-relaxed slide-up" data-aos="fade-up" data-aos-delay="400">
+                        <p class="leading-relaxed slide-up text-xl" data-aos="fade-up" data-aos-delay="300">
                             כיום אני מטפלת בקליניקה פרטית, ומאמינה שכל מפגש הוא מרחב בטוח ותומך, בו נוכל יחד לזהות דפוסים מעכבים, להשתחרר מחסמים ולבנות עבורך דרך חדשה, מעצימה ומשמעותית.
                         </p>
-                        <p class="leading-relaxed slide-up" data-aos="fade-up" data-aos-delay="600">
+                        <p class="leading-relaxed slide-up text-xl" data-aos="fade-up" data-aos-delay="450">
                             הגישה הטיפולית שלי היא אינטגרטיבית ומותאמת אישית לכל מטופל, תוך שילוב כלים מחקריים מוכחים מעולמות ה-CBT וה-EMDR – שילוב עוצמתי שמאפשר תהליך עמוק, ממוקד ומרפא.
                         </p>
                     </div>
@@ -634,7 +641,7 @@
                         <h3 class="text-2xl font-medium mb-4 text-center gradient-text">
                             טיפול קוגניטיבי-התנהגותי (CBT)
                         </h3>
-                        <p class="text-gray-600 text-lg leading-relaxed" data-aos="fade-up" data-aos-delay="300">
+                        <p class="text-gray-600 text-xl leading-relaxed" data-aos="fade-up" data-aos-delay="300">
                             שיטה פרקטית וממוקדת, המסייעת בזיהוי ושינוי דפוסי מחשבה והרגלים מעכבים. כל התנהגות היא נרכשת ונלמדת לאורך החיים- וכדי לשנות אותה, עלינו להבין לעומק את דרך החשיבה שלנו. דרך כלים יישומיים, נלמד להתמודד עם אתגרים בצורה בריאה ומקדמת.
                         </p>
                     </div>
@@ -650,23 +657,23 @@
                             (Eye Movement Desensitization and Reprocessing) - ריפוי עמוק דרך חיבור בין גוף ונפש. EMDR הוא טיפול עוצמתי שמסייע לעיבוד מחדש של חוויות עבר, להפחתת מתח רגשי ולשחרור מטראומות.
                         </p>
                         <ul class="space-y-4">
+                            <li class="flex items-start gap-3 slide-up" data-aos="fade-up" data-aos-delay="200">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-green-500 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span class="text-gray-600 text-xl">יצירת חיבור מחדש בין חוויות לתחושת ביטחון – המוח לומד לקשר מחדש זיכרונות טעונים עם תחושות של רוגע ושליטה.</span>
+                            </li>
                             <li class="flex items-start gap-3 slide-up" data-aos="fade-up" data-aos-delay="300">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-green-500 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                                 </svg>
-                                <span class="text-gray-600 text-lg">יצירת חיבור מחדש בין חוויות לתחושת ביטחון – המוח לומד לקשר מחדש זיכרונות טעונים עם תחושות של רוגע ושליטה.</span>
+                                <span class="text-gray-600 text-xl">גירוי דו-צדדי (BLS) – בעזרת גירוי חושי (כגון תנועות עיניים), המוח מעבד מחדש חוויות עבר ומפחית את השפעתן השלילית.</span>
                             </li>
                             <li class="flex items-start gap-3 slide-up" data-aos="fade-up" data-aos-delay="400">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-green-500 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                                 </svg>
-                                <span class="text-gray-600 text-lg">גירוי דו-צדדי (BLS) – בעזרת גירוי חושי (כגון תנועות עיניים), המוח מעבד מחדש חוויות עבר ומפחית את השפעתן השלילית.</span>
-                            </li>
-                            <li class="flex items-start gap-3 slide-up" data-aos="fade-up" data-aos-delay="500">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-green-500 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                </svg>
-                                <span class="text-gray-600 text-lg">חיבור בין רגש, מחשבה ותחושת הגוף – זיכרונות טראומטיים מאוחסנים לא רק במחשבות אלא גם בגוף.</span>
+                                <span class="text-gray-600 text-xl">חיבור בין רגש, מחשבה ותחושת הגוף – זיכרונות טראומטיים מאוחסנים לא רק במחשבות אלא גם בגוף.</span>
                             </li>
                         </ul>
                     </div>
@@ -758,7 +765,7 @@
                             <input type="email" name="email" placeholder="דואר אלקטרוני" class="form-input" required data-aos="fade-up" data-aos-delay="200" data-aos-once="true" />
                             <input type="tel" name="phone" placeholder="טלפון" class="form-input" data-aos="fade-up" data-aos-delay="300" data-aos-once="true" />
                             <textarea name="message" placeholder="איך אוכל לעזור לך?" class="form-textarea" required data-aos="fade-up" data-aos-delay="400" data-aos-once="true"></textarea>
-                            <button type="submit" class="btn btn-primary w-full" data-aos="fade-up" data-aos-delay="300" data-aos-once="true">
+                            <button type="submit" class="btn btn-primary w-full" data-aos="fade-up" data-aos-delay="100" data-aos-once="true">
                                 שליחה
                             </button>
                         </form>
@@ -797,7 +804,12 @@
                 offset: 120
             });
 			        });
-            
+    document.addEventListener('DOMContentLoaded', () => {
+        const el = document.querySelector('.typing-effect');
+        setTimeout(() => {
+            el.classList.add('typing-finished');
+        }, 2000); // אחרי 3 שניות בדיוק
+    });
             // Set current year
             document.getElementById('currentYear').textContent = new Date().getFullYear();
             
