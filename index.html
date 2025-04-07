@@ -12,6 +12,8 @@
     <!-- Animation Libraries -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 	<meta name="description" content="אסי גרינברג, מטפלת רגשית מוסמכת בשיטות CBT ו-EMDR. טיפול אישי, חם ומכיל – לפתח תקווה חדשה ונפש רגועה. צרו קשר עוד היום.">
 <meta name="keywords" content="טיפול רגשי, אסי גרינברג, CBT, EMDR, פסיכותרפיה, טיפול בחרדה, טיפול אישי, מטפלת רגשית, טיפול לנשים">
 <meta name="author" content="אסי גרינברג">
@@ -481,6 +483,74 @@
         .service-card:hover .service-icon::after {
             transform: scale(1.2);
         }
+
+.quote {
+  font-family: serif;
+  color: #B08968;
+}
+/* ✅ עטיפה כללית עם גובה מתאים */
+.swiper {
+  position: relative;
+  padding-bottom: 2.5rem; /* כדי לפנות מקום לנקודות */
+}
+
+/* ✅ מיקום החצים בצמוד לגובה הטקסט */
+.swiper-button-next,
+.swiper-button-prev {
+  top: 50%;
+  transform: translateY(-50%);
+  color: #b08968;
+  width: 2rem;
+  height: 2rem;
+  z-index: 10;
+}
+
+/* ✅ התאמת גודל האייקונים */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 1.5rem;
+}
+
+/* ✅ מיקום הנקודות מתחת לטקסט */
+.swiper-pagination {
+  position: absolute;
+  bottom: 1rem; /* לא רחוק מדי */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+/* ✅ צבעים נעימים לנקודות */
+.swiper-pagination-bullet {
+  background-color: #d9d9d9;
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #b08968;
+}
+
+
+.buttons-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    margin: 0 10px;
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
+
 		html, body {
   overflow-x: hidden;
 }
@@ -685,7 +755,39 @@
                 </p>
             </div>
         </div>
-    </section>
+<!-- סקשן המלצות -->
+<div class="max-w-2xl mx-auto my-16 px-4">
+  <h2 class="text-3xl font-light mb-8 text-center gradient-text">המלצות</h2>
+  
+  <!-- Swiper -->
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <!-- המלצה 1 -->
+      <div class="swiper-slide text-center text-gray-700 text-lg relative px-4">
+        <span class="quote text-5xl right-6 top-0">“</span>
+		התהליך עם אסי היה מאיר עיניים ופותח את הלב. מרגישה שבזכות הטיפול אני קודם כל אדם טוב יותר לעצמי וכמובן גם כלפי הסביבה. מודה מאד על הדרך והתוצאה. 
+        <span class="quote text-5xl left-6 top-0">”</span>
+      </div>
+
+      <!-- המלצה 2 -->
+      <div class="swiper-slide text-center text-gray-700 text-lg relative px-4">
+        <span class="quote text-5xl absolute right-3 top-0">“</span>
+		טיפול היה מאד מוצלח, הגעתי לתובנות שלא יכולתי להגיע אליהן בשום צורה לבד, עישתי דרך והתקדמתי והיום אני במקום הרבה יותר טוב ממה שהייתי עד הטיפול. מודה לך מאד מאד.
+        <span class="quote text-5xl absolute left-3 top-0">”</span>
+      </div>
+
+      <!-- הוסף עוד המלצות כאן -->
+    </div>
+
+    <!-- נקודות ניווט -->
+    <div class="swiper-pagination"></div>
+
+    <!-- חצים -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</div>
+
 
     <!-- Contact Section -->
     <section id="contact" class="py-20 px-4 bg-gradient">
@@ -694,7 +796,10 @@
                 <div data-aos="fade-right">
                     <h2 class="text-3xl font-light mb-8 gradient-text">יצירת קשר</h2>
                     <p class="text-gray-600 text-lg mb-8">
-                        אני כאן עבורכם. מוזמנים ליצור קשר בכל שאלה או התייעצות.
+                        מרגיש שזה הזמן להתחיל תהליך?
+בואו נדבר
+לשיחה ראשונית קצרה ובדיקת התאמה
+
                     </p>
                     
                     <div class="space-y-6">
@@ -890,6 +995,21 @@
             // Reset form
             event.target.reset();
         });
+const swiper = new Swiper(".mySwiper", {
+    loop: true,
+    autoplay: {
+      delay: 6000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
 
     </script>
 </body>
