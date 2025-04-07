@@ -756,37 +756,53 @@
             </div>
         </div>
 <!-- סקשן המלצות -->
-<div class="max-w-2xl mx-auto my-16 px-4">
-  <h2 class="text-3xl font-light mb-8 text-center gradient-text">המלצות</h2>
-  
-  <!-- Swiper -->
-  <div class="swiper mySwiper">
-    <div class="swiper-wrapper">
-      <!-- המלצה 1 -->
-      <div class="swiper-slide text-center text-gray-700 text-lg relative px-4">
-        <span class="quote text-5xl right-6 top-0">“</span>
-		התהליך עם אסי היה מאיר עיניים ופותח את הלב. מרגישה שבזכות הטיפול אני קודם כל אדם טוב יותר לעצמי וכמובן גם כלפי הסביבה. מודה מאד על הדרך והתוצאה. 
-        <span class="quote text-5xl left-6 top-0">”</span>
-      </div>
-
-      <!-- המלצה 2 -->
-      <div class="swiper-slide text-center text-gray-700 text-lg relative px-4">
-        <span class="quote text-5xl absolute right-3 top-0">“</span>
-		טיפול היה מאד מוצלח, הגעתי לתובנות שלא יכולתי להגיע אליהן בשום צורה לבד, עישתי דרך והתקדמתי והיום אני במקום הרבה יותר טוב ממה שהייתי עד הטיפול. מודה לך מאד מאד.
-        <span class="quote text-5xl absolute left-3 top-0">”</span>
-      </div>
-
-      <!-- הוסף עוד המלצות כאן -->
+<div class="relative w-full max-w-xl mx-auto bg-[#fdf7f2] rounded-xl p-6 text-right font-serif text-gray-800 py-10">
+<h2 class="text-3xl py-10 text-center font-bold">המלצות</h2>
+  <div id="testimonial-carousel" class="overflow-hidden relative h-40">
+    <div class="testimonial-slide transition-all duration-500 ease-in-out text-xl">
+	  	  <span class="text-6xl text-black align-bottom relative -top-1">”</span>
+התהליך עם אסי היה מאיר עיניים ופותח את הלב. מרגישה שבזכות הטיפול אני קודם כל אדם טוב יותר לעצמי וכמובן גם כלפי הסביבה. מודה מאד על הדרך והתוצאה. 
+	  	  <span class="text-6xl text-black align-bottom relative -bottom-3">”</span>
     </div>
-
-    <!-- נקודות ניווט -->
-    <div class="swiper-pagination"></div>
-
-    <!-- חצים -->
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
+    <div class="testimonial-slide transition-all duration-500 ease-in-out text-xl">
+	  	  <span class="text-6xl text-black align-bottom relative -top-1">”</span>
+טיפול היה מאד מוצלח, הגעתי לתובנות שלא יכולתי להגיע אליהן בשום צורה לבד, עשיתי דרך והתקדמתי, והיום אני במקום הרבה יותר טוב ממה שהייתי עד הטיפול. מודה לך מאד מאד.
+	  	  <span class="text-6xl text-black align-bottom relative -bottom-3">”</span>
+    </div>
+    <div class="testimonial-slide transition-all duration-500 ease-in-out text-xl">
+	  	  <span class="text-6xl text-black align-bottom relative -top-1">”</span>
+פגישות מאד נעימות (לא תמיד קלות, בכלל לא), מרגיש שאסי מאד קשובה והכי חשוב נותנת לי את הכלים הפרקטיים שאני צריך. 
+	  	  <span class="text-6xl text-black align-bottom relative -bottom-3">”</span>
+    </div>
+	    <div class="testimonial-slide transition-all duration-500 ease-in-out text-xl">
+	  	  <span class="text-6xl text-black align-bottom relative -top-1">”</span>
+אני הרגשתי שאני בידיים טובות. שמחה מאד על הטיפול. 
+	  	  <span class="text-6xl text-black align-bottom relative -bottom-3">”</span>
+    </div>
+	    <div class="testimonial-slide transition-all duration-500 ease-in-out text-xl">
+	  	  <span class="text-6xl text-black align-bottom relative -top-1">”</span>
+הטיפול עזר לי להבין את עצמי, מאיזה מקום אני פועלת ובכללי לשנות דברים שהפריעו לי בחיים. תודה רבה על הכל. 
+	  	  <span class="text-6xl text-black align-bottom relative -bottom-3">”</span>
+    </div>
+	    <div class="testimonial-slide transition-all duration-500 ease-in-out text-xl">
+	  	  <span class="text-6xl text-black align-bottom relative -top-1">”</span>
+עברתי תהליך מאד משמעותי. תודה לך אסי על הרגישות והתבונה שלך, גם כשדיברנו על דברים קשים, זה היה ברגישות ובחמלה, והרגשתי שאני יכולה לשתף הכל בביטחון.	  	  <span class="text-6xl text-black align-bottom relative -bottom-3">”</span>
+    </div>
   </div>
+
+<!-- חץ אחורה (שמאל) – צריך לפנות שמאלה -->
+<button id="prev" class="absolute right-2 top-1/2 -translate-y-1/2 text-yellow-600 text-2xl">
+  &#x276E;
+</button>
+
+<!-- חץ קדימה (ימין) – צריך לפנות ימינה -->
+<button id="next" class="absolute left-2 top-1/2 -translate-y-1/2 text-yellow-600 text-2xl">
+  &#x276F;
+</button>
+
 </div>
+
+
 
 
     <!-- Contact Section -->
@@ -995,21 +1011,31 @@
             // Reset form
             event.target.reset();
         });
-const swiper = new Swiper(".mySwiper", {
-    loop: true,
-    autoplay: {
-      delay: 6000,
-      disableOnInteraction: false,
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
+  const slides = document.querySelectorAll('.testimonial-slide');
+  const dots = document.querySelectorAll('.dot');
+  let index = 0;
+
+  function showSlide(i) {
+    slides.forEach((slide, j) => {
+      slide.classList.toggle('hidden', j !== i);
+    });
+    dots.forEach((dot, j) => {
+      dot.classList.toggle('bg-rose-600', j === i);
+      dot.classList.toggle('bg-gray-300', j !== i);
+    });
+  }
+
+  document.getElementById('prev').addEventListener('click', () => {
+    index = (index - 1 + slides.length) % slides.length;
+    showSlide(index);
   });
+
+  document.getElementById('next').addEventListener('click', () => {
+    index = (index + 1) % slides.length;
+    showSlide(index);
+  });
+
+  showSlide(index);
 
     </script>
 </body>
