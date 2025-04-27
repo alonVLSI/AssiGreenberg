@@ -324,18 +324,29 @@ html, body {
             transform: translateX(0);
         }
         
-        .glow {
-            animation: glow 2s ease-in-out infinite alternate;
-        }
-        
-        @keyframes glow {
-            from {
-                text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #FFB930, 0 0 20px #FFB930;
-            }
-            to {
-                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #FFB930, 0 0 40px #FFB930;
-            }
-        }
+.glow {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 
+      0 0 5px #fb923c, /* כתום בהיר - orange-400 */
+      0 0 10px #fb923c, 
+      0 0 15px #f97316, /* כתום - orange-500 */
+      0 0 20px #f97316;
+  }
+  to {
+    text-shadow: 
+      0 0 10px #fb923c, 
+      0 0 20px #fb923c, 
+      0 0 30px #f97316, 
+      0 0 40px #f97316;
+  }
+}
+
+
+
         
         .gradient-text {
             background: linear-gradient(45deg, #25D366, #128C7E);
@@ -567,6 +578,7 @@ html, body {
 }
     </style>
 </head>
+<script src="https://cdn.userway.org/widget.js" data-account="VZA8XqqwST"></script>
 <body class="min-h-screen bg-pattern">
   <div class="max-w-screen overflow-x-hidden">
 <header class="fixed top-0 w-full bg-custom bg-opacity-95 backdrop-blur-sm z-65 shadow-sm py-2 overflow-x-hidden">
@@ -651,7 +663,7 @@ html, body {
                         אם עניתם "כן" לאחת השאלות או יותר, והחלטתם לבחור בעצמכם ובאושר שלכם –
                     </p>
                     <p class="text-3xl font-bold text-orange-600 mb-8 glow" data-aos="fade-up" data-aos-delay="300">
-                         אני כאן בשבילכם.💛
+                         אני כאן בשבילכם.🧡
                     </p>
                 </div>
             </div>
@@ -764,11 +776,11 @@ html, body {
             </div>
 
             <div class="text-center mt-10" data-aos="zoom-in" data-aos-delay="300">
-<p class="text-3xl font-bold font-medium" style="color: #c49102;text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); ">
+<p class="text-3xl font-bold font-medium" style="color: #fb923c; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); ">
                     כל שינוי מתחיל בהחלטה – אני כאן ללוות אתכם בדרך
                 </p>
 				 <p class="text-3xl font-bold font-medium text-amber-600 heart-beat">
-                    💛
+                    🧡
                 </p>
             </div>
         <div class="relative w-full max-w-3xl mx-auto bg-[#fdf7f2] rounded-xl p-6 font-serif text-gray-800 py-10">
