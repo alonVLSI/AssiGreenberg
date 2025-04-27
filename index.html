@@ -578,7 +578,6 @@ html, body {
 }
     </style>
 </head>
-<script src="https://cdn.userway.org/widget.js" data-account="VZA8XqqwST"></script>
 <body class="min-h-screen bg-pattern">
   <div class="max-w-screen overflow-x-hidden">
 <header class="fixed top-0 w-full bg-custom bg-opacity-95 backdrop-blur-sm z-65 shadow-sm py-2 overflow-x-hidden">
@@ -608,13 +607,11 @@ html, body {
 
 
 
-
-
-
     <!-- Hero Section -->
     <section class="pt-32 pb-4 px-4 bg-gradient relative">
         <div class="max-w-7xl mx-auto">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
+
                 <div>
                     <div class="flex items-center gap-2 mb-6">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-600 animate__animated animate__fadeIn animate__delay-1s" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -975,6 +972,13 @@ html, body {
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     
     <script type="module">
+	  window.onload = function() {
+    var s = document.createElement('script');
+    s.setAttribute('data-account', 'VZA8XqqwST');
+    s.setAttribute('data-position', '3'); // בוחר מיקום
+    s.src = 'https://cdn.userway.org/widget.js';
+    document.body.appendChild(s);
+  }
         // Initialize AOS library
         document.addEventListener('DOMContentLoaded', function() {
             AOS.init({
@@ -1110,6 +1114,7 @@ html, body {
     index = (index + 1) % slides.length;
     showSlide(index);
   });
+
 
   // התחלה
   createDots();
