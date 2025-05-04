@@ -331,17 +331,17 @@ html, body {
 @keyframes glow {
   from {
     text-shadow: 
-      0 0 5px #DEA5A4, 
-      0 0 10px #DEA5A4, 
-      0 0 15px #DEA5A4, 
-      0 0 20px #DEA5A4;
+      0 0 5px #dfa5a4, 
+      0 0 10px #dfa5a4, 
+      0 0 15px #dfa5a4, 
+      0 0 20px #dfa5a4;
   }
   to {
     text-shadow: 
-      0 0 10px #DEA5A4, 
-      0 0 20px #DEA5A4, 
-      0 0 30px #DEA5A4, 
-      0 0 40px #DEA5A4;
+      0 0 10px #dfa5a4, 
+      0 0 20px #dfa5a4, 
+      0 0 30px #dfa5a4, 
+      0 0 40px #dfa5a4;
   }
 }
 
@@ -569,6 +569,9 @@ html, body {
    z-index: 10;
    color: #dfa5a4;
  }
+ #first-heart {
+ color: #dfa5a4;
+ }
 
 .btn:hover {
     background-color: #45a049;
@@ -660,10 +663,17 @@ html, body {
                     <p class="text-2xl font-bold mb-4" data-aos="fade-up" data-aos-delay="200">
                         אם עניתם "כן" לאחת השאלות או יותר, והחלטתם לבחור בעצמכם ובאושר שלכם –
                     </p>
-                    <p class="text-3xl font-bold text-[#dfa5a4] mb-8 glow" data-aos="fade-up" data-aos-delay="300">
-                         אני כאן בשבילכם.<span class="text-3xl font-bold font-medium text-[#dfa5a4]">❤️</span>
+<p class="text-3xl font-bold text-[#dfa5a4] mb-8 glow flex items-center gap-2" data-aos="fade-up" data-aos-delay="300">
+  אני כאן בשבילכם.
+  <svg class="w-8 h-8 glow" viewBox="0 0 24 24" fill="#dfa5a4" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 
+             2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 
+             2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 
+             5.42 22 8.5c0 3.78-3.4 6.86-8.55 
+             11.54L12 21.35z"/>
+  </svg>
+</p>
 
-                    </p>
                 </div>
             </div>
             
