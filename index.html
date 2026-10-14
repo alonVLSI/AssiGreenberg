@@ -587,23 +587,32 @@ html, body {
   <div class="flex items-center justify-between min-h-[4.5rem] px-3 max-w-7xl mx-auto">
     
     <!-- חלק ימני: לוגו וטקסט -->
-    <div class="flex items-center gap-2 sm:gap-4 min-w-0 flex-grow">
+    <div class="flex items-center gap-2 sm:gap-3 min-w-0 flex-grow">
       <img
         src="images/Logo_circle.png"
         alt="Logo"
-        class="h-12 w-12 sm:h-20 sm:w-20 rounded-full object-cover flex-shrink-0" />
+        class="h-10 w-10 sm:h-16 sm:w-16 rounded-full object-cover flex-shrink-0" />
       
       <div class="leading-tight flex flex-col justify-center min-w-0">
-        <!-- כותרת ראשית (קטנה יותר בנייד שלא תגלוש, וגדולה במסכים רחבים) -->
-        <h1 class="text-xs sm:text-2xl font-bold text-gray-900 whitespace-nowrap">
+        <!-- כותרת ראשית -->
+        <h1 class="text-[11px] sm:text-lg font-bold text-gray-900 whitespace-nowrap">
           טיפול רגשי | אסי גרינברג - פסיכותרפיסטית CBT
         </h1>
         <!-- תת-כותרת -->
-        <p class="text-[11px] sm:text-base text-gray-600 font-normal mt-0.5">
+        <p class="text-[10px] sm:text-sm text-gray-600 font-normal mt-0.5">
           מטפלת רגשית באשקלון
         </p>
       </div>
     </div>
+
+    <!-- כפתור וואטסאפ קטן בתוך ה-Header -->
+    <a href="https://wa.me/972545420711" target="_blank" aria-label="פנייה בוואטסאפ"
+       class="bg-[#25D366] text-white p-2 sm:px-3 sm:py-1.5 rounded-full sm:rounded-md flex items-center justify-center gap-1 flex-shrink-0 mr-2 shadow-sm hover:bg-[#128C7E] transition-colors">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 sm:w-5 sm:h-5 fill-current" viewBox="0 0 24 24">
+        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+      </svg>
+      <span class="text-xs font-medium hidden sm:inline">צרו קשר</span>
+    </a>
 
   </div>
 </header>
