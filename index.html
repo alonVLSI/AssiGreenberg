@@ -583,7 +583,7 @@ html, body {
 </head>
 <body class="min-h-screen bg-pattern">
   <div class="max-w-screen overflow-x-hidden">
-<header class="fixed top-0 w-full bg-custom bg-opacity-95 backdrop-blur-sm z-40 shadow-sm py-4 overflow-x-hidden">
+<header class="fixed top-0 w-full bg-custom bg-opacity-95 backdrop-blur-sm z-50 shadow-sm py-3 overflow-x-hidden">
   <div class="flex items-center justify-between min-h-[5.5rem] px-3 max-w-7xl mx-auto">
     
     <!-- חלק ימני: לוגו וטקסט -->
@@ -594,16 +594,25 @@ html, body {
         class="h-12 w-12 sm:h-20 sm:w-20 rounded-full object-cover flex-shrink-0" />
       
       <div class="leading-tight flex flex-col justify-center min-w-0">
-        <!-- כותרת ראשית בירוק כהה -->
+        <!-- כותרת ראשית גדולה ובולטת -->
         <h1 class="text-xs sm:text-xl font-bold whitespace-nowrap" style="color: #064e3b;">
           טיפול רגשי | אסי גרינברג - פסיכותרפיסטית CBT
         </h1>
-        <!-- תת-כותרת -->
-        <p class="text-[11px] sm:text-base text-gray-700 font-normal mt-1">
+        <!-- תת-כותרת קטנה יותר -->
+        <p class="text-[10px] sm:text-sm text-gray-700 font-normal mt-1">
           מטפלת רגשית באשקלון
         </p>
       </div>
     </div>
+
+    <!-- כפתור וואטסאפ בתוך ה-Header בצד שמאל -->
+    <a href="https://wa.me/972545420711" target="_blank" aria-label="פנייה בוואטסאפ"
+       class="w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center flex-shrink-0 mr-2 shadow-sm transition-transform hover:scale-105"
+       style="background-color: #25D366;">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 sm:w-6 sm:h-6 fill-current text-white" viewBox="0 0 24 24">
+        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+      </svg>
+    </a>
 
   </div>
 </header>
